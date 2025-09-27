@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Bienvenido a la página de Reviews</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistema de Reseñas</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Arial', sans-serif;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                color: #ffffff;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                line-height: 1.6;
+            }
+
+            .container {
+                flex: 1;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 300;
+                margin-bottom: 2rem;
+                color: #ffffff;
+                letter-spacing: 1px;
+            }
+
+            .menu {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 40px;
+                align-items: center;
+            }
+
+            .menu-link {
+                display: inline-block;
+                padding: 15px 40px;
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff;
+                text-decoration: none;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                font-size: 1.1rem;
+                font-weight: 400;
+                min-width: 250px;
+                backdrop-filter: blur(10px);
+            }
+
+            .menu-link:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-color: rgba(255, 255, 255, 0.4);
+                color: #ffffff;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            footer {
+                background: rgba(0, 0, 0, 0.3);
+                text-align: center;
+                padding: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    padding: 40px 15px;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                .menu-link {
+                    min-width: 200px;
+                    padding: 12px 30px;
+                }
+            }
+        </style>
     </head>
     <body>
-        Bienvenido a la página de Reviews
-        <p><a href="{% url 'list_review' %}">Listar Reviews</a></p>
-        <p><a href="{% url 'add_review' %}">Agregar Review</a></p>
+        <div class="container">
+            <h1>Sistema de Reseñas</h1>
+            <div class="menu">
+                <a href="{% url 'list_review' %}" class="menu-link">Ver Reseñas</a>
+                <a href="{% url 'add_review' %}" class="menu-link">Agregar Reseña</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Proyecto desarrollado en <strong>Cibertec Lima, Perú</strong><br>
+            Curso de Inteligencia Artificial</p>
+        </footer>
     </body>
 </html>
